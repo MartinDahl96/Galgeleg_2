@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class StartSpilFragmet extends Fragment {
+public class StartSpilFragment extends Fragment {
 
 
-    public StartSpilFragmet() {
+    public StartSpilFragment() {
         // Required empty public constructor
     }
 

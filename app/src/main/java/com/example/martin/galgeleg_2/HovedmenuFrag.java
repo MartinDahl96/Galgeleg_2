@@ -46,6 +46,10 @@ public class HovedmenuFrag extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
 
         if (v == startSpil_BTN) {
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_FL, new StartSpilFragment())
+                    .addToBackStack(null)
+                    .commit();
 
         }
 
