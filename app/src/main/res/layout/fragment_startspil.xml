@@ -122,9 +122,11 @@
         android:id="@+id/f_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginEnd="3dp"
         android:text="F"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="412dp" />
+        app:layout_constraintBottom_toTopOf="@+id/x_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/g_BTN"
+        app:layout_constraintStart_toEndOf="@+id/d_BTN" />
 
     <Button
         android:id="@+id/g_BTN"
@@ -314,7 +316,7 @@
         android:id="@+id/galge_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="12dp"
         android:src="@drawable/galge"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -327,15 +329,26 @@
         android:layout_marginStart="3dp"
         android:text="Q"
         app:layout_constraintBottom_toTopOf="@+id/a_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/w_BTN"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/statusTekst_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/galge_IV" />
+
+    <TextView
+        android:id="@+id/alleGæt_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statusTekst_TV" />
 </android.support.constraint.ConstraintLayout>
