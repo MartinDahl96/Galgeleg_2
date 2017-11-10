@@ -29,7 +29,7 @@ public class HovedmenuFrag extends Fragment implements View.OnClickListener {
         View rod = inflater.inflate(R.layout.fragment_hovedmenu, container, false);
 
         velkomst_TV = (TextView) rod.findViewById(R.id.velkomst_TV);
-        velkomst_TV.setText("Velkommen til Galgeleg 2.0!");
+        velkomst_TV.setText("               Velkommen til Galgeleg 2.0!" + "\nKlik på en af knapperne for at komme videre");
 
         startSpil_BTN = (Button) rod.findViewById(R.id.startSpil_BTN);
         startSpil_BTN.setText("Start spillet");

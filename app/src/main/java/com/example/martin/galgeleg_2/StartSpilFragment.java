@@ -505,16 +505,36 @@ public class StartSpilFragment extends Fragment implements View.OnClickListener{
                 break;
             case 6: galge.setImageResource(R.drawable.forkert6);
                 break;
-            case 7: galge.setImageResource(R.drawable.rip);
-                    statusTekst.setText("Du har desværre tabt, og manden blev hængt");
-                    alleGæt.setText("");
-                    skjultOrd.setText("Ordet var: " + galgelogik.getChosenWord());
+            case 7:
                     galgelogik.setLoss();
                 break;
 
         }
         if (galgelogik.getLossStatus()) {
 
+            FinishgameFrag fragment = new FinishgameFrag();
+            Bundle values = new Bundle();
+            values.putBoolean("tab", galgelogik.getLossStatus());
+            values.putString("ord", galgelogik.getChosenWord());
+            fragment.setArguments(values);
+
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_FL, fragment)
+                    .addToBackStack(null)
+                    .commit();
+        }
+
+        if (galgelogik.getWinStatus()) {
+
+            FinishgameFrag fragment = new FinishgameFrag();
+            Bundle values = new Bundle();
+            values.putBoolean("vind", galgelogik.getWinStatus());
+            fragment.setArguments(values);
+
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_FL, fragment)
+                    .addToBackStack(null)
+                    .commit();
         }
 
     }

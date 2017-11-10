@@ -28,9 +28,9 @@ public class Galgelogik {
     private String visibleWord;
     private String letter;
     private int nrOfWrongLetters;
-    private boolean correctLetter;
-    private boolean win;
-    private boolean lose;
+    private Boolean correctLetter;
+    private Boolean win;
+    private Boolean lose;
 
 
     /**
@@ -85,7 +85,7 @@ public class Galgelogik {
      * Bliver brugt til at returnere, hvorvidt spilleren har vundet
      * @return win
      */
-    public boolean getWinStatus() {
+    public Boolean getWinStatus() {
         return win;
     }
 
@@ -93,7 +93,7 @@ public class Galgelogik {
         lose = true;
     }
 
-    public boolean getLossStatus() {
+    public Boolean getLossStatus() {
         return lose;
     }
 

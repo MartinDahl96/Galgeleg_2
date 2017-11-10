@@ -10,7 +10,7 @@
     <Button
         android:id="@+id/startSpil_BTN"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:background="@color/colorPrimaryDark"
@@ -24,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
+        android:textSize="16sp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
