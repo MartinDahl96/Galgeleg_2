@@ -89,6 +89,14 @@ public class Galgelogik {
         return win;
     }
 
+    public void setLoss() {
+        lose = true;
+    }
+
+    public boolean getLossStatus() {
+        return lose;
+    }
+
     /**
      * Bliver brugt til at oprette en samling af ord der kan gættes på
      * og kalder derefter reset()

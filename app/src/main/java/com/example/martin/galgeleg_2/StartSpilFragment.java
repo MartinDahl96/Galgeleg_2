@@ -505,8 +505,15 @@ public class StartSpilFragment extends Fragment implements View.OnClickListener{
                 break;
             case 6: galge.setImageResource(R.drawable.forkert6);
                 break;
-            case 7:
+            case 7: galge.setImageResource(R.drawable.rip);
+                    statusTekst.setText("Du har desværre tabt, og manden blev hængt");
+                    alleGæt.setText("");
+                    skjultOrd.setText("Ordet var: " + galgelogik.getChosenWord());
+                    galgelogik.setLoss();
                 break;
+
+        }
+        if (galgelogik.getLossStatus()) {
 
         }
 
