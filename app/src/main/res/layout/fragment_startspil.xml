@@ -12,81 +12,111 @@
         android:id="@+id/z_BTN"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:layout_marginBottom="27dp"
+        android:layout_marginStart="71dp"
         android:text="Z"
-        tools:layout_editor_absoluteX="71dp"
-        tools:layout_editor_absoluteY="448dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/x_BTN"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/x_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginBottom="27dp"
+        android:layout_marginEnd="3dp"
         android:text="X"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="448dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/c_BTN"
+        app:layout_constraintStart_toEndOf="@+id/z_BTN" />
 
     <Button
         android:id="@+id/c_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginBottom="27dp"
+        android:layout_marginStart="3dp"
         android:text="C"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="448dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/v_BTN"
+        app:layout_constraintStart_toEndOf="@+id/x_BTN" />
 
     <Button
         android:id="@+id/v_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginBottom="27dp"
+        android:layout_marginEnd="1dp"
         android:text="V"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="448dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/b_BTN"
+        app:layout_constraintStart_toEndOf="@+id/c_BTN" />
 
     <Button
         android:id="@+id/b_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginBottom="27dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginStart="1dp"
         android:text="B"
-        tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="448dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/n_BTN"
+        app:layout_constraintStart_toEndOf="@+id/v_BTN" />
 
     <Button
         android:id="@+id/n_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginBottom="27dp"
+        android:layout_marginStart="1dp"
         android:text="N"
-        tools:layout_editor_absoluteX="244dp"
-        tools:layout_editor_absoluteY="448dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/m_BTN"
+        app:layout_constraintStart_toEndOf="@+id/b_BTN" />
 
     <Button
         android:id="@+id/m_BTN"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:layout_marginBottom="27dp"
+        android:layout_marginEnd="71dp"
         android:text="M"
-        tools:layout_editor_absoluteX="277dp"
-        tools:layout_editor_absoluteY="448dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/n_BTN" />
 
     <Button
         android:id="@+id/a_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginBottom="63dp"
+        android:layout_marginStart="2dp"
         android:text="A"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="412dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/s_BTN"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/s_BTN"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:layout_marginBottom="63dp"
+        android:layout_marginEnd="5dp"
         android:text="S"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="412dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/d_BTN"
+        app:layout_constraintStart_toEndOf="@+id/a_BTN" />
 
     <Button
         android:id="@+id/d_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginStart="3dp"
         android:text="D"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="412dp" />
+        app:layout_constraintBottom_toTopOf="@+id/z_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/f_BTN"
+        app:layout_constraintStart_toEndOf="@+id/s_BTN" />
 
     <Button
         android:id="@+id/f_BTN"
@@ -100,167 +130,212 @@
         android:id="@+id/g_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginStart="3dp"
         android:text="G"
-        tools:layout_editor_absoluteX="143dp"
-        tools:layout_editor_absoluteY="412dp" />
+        app:layout_constraintBottom_toTopOf="@+id/c_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/h_BTN"
+        app:layout_constraintStart_toEndOf="@+id/f_BTN" />
 
     <Button
         android:id="@+id/h_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginEnd="1dp"
         android:text="H"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="412dp" />
+        app:layout_constraintBottom_toTopOf="@+id/v_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/j_BTN"
+        app:layout_constraintStart_toEndOf="@+id/g_BTN" />
 
     <Button
         android:id="@+id/j_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginStart="1dp"
         android:text="J"
-        tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="412dp" />
+        app:layout_constraintBottom_toTopOf="@+id/b_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/k_BTN"
+        app:layout_constraintStart_toEndOf="@+id/h_BTN" />
 
     <Button
         android:id="@+id/k_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginStart="1dp"
         android:text="K"
-        tools:layout_editor_absoluteX="244dp"
-        tools:layout_editor_absoluteY="412dp" />
+        app:layout_constraintBottom_toTopOf="@+id/n_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/l_BTN"
+        app:layout_constraintStart_toEndOf="@+id/j_BTN" />
 
     <Button
         android:id="@+id/l_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginEnd="4dp"
         android:text="L"
-        tools:layout_editor_absoluteX="277dp"
-        tools:layout_editor_absoluteY="412dp" />
+        app:layout_constraintBottom_toTopOf="@+id/m_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/æ_BTN"
+        app:layout_constraintStart_toEndOf="@+id/k_BTN" />
 
     <Button
         android:id="@+id/æ_BTN"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:layout_marginBottom="63dp"
+        android:layout_marginStart="4dp"
         android:text="Æ"
-        tools:layout_editor_absoluteX="314dp"
-        tools:layout_editor_absoluteY="412dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ø_BTN"
+        app:layout_constraintStart_toEndOf="@+id/l_BTN" />
 
     <Button
         android:id="@+id/ø_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginBottom="63dp"
+        android:layout_marginEnd="3dp"
         android:text="Ø"
-        tools:layout_editor_absoluteX="348dp"
-        tools:layout_editor_absoluteY="412dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/æ_BTN" />
 
     <Button
         android:id="@+id/å_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginStart="1dp"
         android:text="Å"
-        tools:layout_editor_absoluteX="348dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintBottom_toTopOf="@+id/æ_BTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/p_BTN" />
 
     <Button
         android:id="@+id/p_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginStart="4dp"
         android:text="P"
-        tools:layout_editor_absoluteX="314dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintBottom_toTopOf="@+id/æ_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/å_BTN"
+        app:layout_constraintStart_toEndOf="@+id/o_BTN" />
 
     <Button
         android:id="@+id/o_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginEnd="4dp"
         android:text="O"
-        tools:layout_editor_absoluteX="277dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintBottom_toTopOf="@+id/l_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/p_BTN"
+        app:layout_constraintStart_toEndOf="@+id/i_BTN" />
 
     <Button
         android:id="@+id/t_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginStart="3dp"
         android:text="T"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintBottom_toTopOf="@+id/g_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/y_BTN"
+        app:layout_constraintStart_toEndOf="@+id/r_BTN" />
 
     <Button
         android:id="@+id/y_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginEnd="1dp"
         android:text="Y"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintBottom_toTopOf="@+id/h_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/u_BTN"
+        app:layout_constraintStart_toEndOf="@+id/t_BTN" />
 
     <Button
         android:id="@+id/u_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginEnd="1dp"
         android:text="U"
-        tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintBottom_toTopOf="@+id/j_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/i_BTN"
+        app:layout_constraintStart_toEndOf="@+id/y_BTN" />
 
     <Button
         android:id="@+id/i_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
         android:text="I"
-        tools:layout_editor_absoluteX="244dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintBottom_toTopOf="@+id/k_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/o_BTN"
+        app:layout_constraintStart_toEndOf="@+id/u_BTN" />
 
     <Button
         android:id="@+id/e_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginStart="2dp"
         android:text="E"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintBottom_toTopOf="@+id/d_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/r_BTN"
+        app:layout_constraintStart_toEndOf="@+id/w_BTN" />
 
     <Button
         android:id="@+id/r_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginEnd="4dp"
         android:text="R"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintBottom_toTopOf="@+id/f_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/t_BTN"
+        app:layout_constraintStart_toEndOf="@+id/e_BTN" />
 
     <Button
         android:id="@+id/w_BTN"
         android:layout_width="36dp"
         android:layout_height="36dp"
+        android:layout_marginEnd="2dp"
         android:text="W"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintBottom_toTopOf="@+id/s_BTN"
+        app:layout_constraintEnd_toStartOf="@+id/e_BTN"
+        app:layout_constraintStart_toEndOf="@+id/q_BTN" />
 
     <TextView
         android:id="@+id/skjultOrd_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="40dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/galge_IV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:src="@drawable/galge"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="99dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skjultOrd_TV" />
 
     <Button
         android:id="@+id/q_BTN"
         android:layout_width="33dp"
         android:layout_height="36dp"
+        android:layout_marginStart="3dp"
         android:text="Q"
-        tools:layout_editor_absoluteX="3dp"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintBottom_toTopOf="@+id/a_BTN"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/statusTekst_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="332dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/galge_IV" />
 </android.support.constraint.ConstraintLayout>
