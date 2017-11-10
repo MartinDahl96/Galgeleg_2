@@ -1,0 +1,32 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context="com.example.martin.galgeleg_2.HjaelpFrag">
+
+
+    <ImageView
+        android:id="@+id/hjaelp_IV"
+        android:layout_width="143dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="60dp"
+        android:contentDescription="questionmark"
+        android:src="@drawable/questionmark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hjaelpTekst_TV"
+        android:layout_width="356dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/hjaelp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hjaelp_IV" />
+</android.support.constraint.ConstraintLayout>
