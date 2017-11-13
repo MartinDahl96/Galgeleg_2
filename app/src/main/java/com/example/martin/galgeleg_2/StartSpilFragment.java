@@ -24,6 +24,8 @@ public class StartSpilFragment extends Fragment implements View.OnClickListener{
     Button q, w, e, r, t, y, u, i, o, p, å, a, s, d, f, g, h, j, k, l, æ, ø, z, x, c, v, b, n, m;
     Galgelogik galgelogik = new Galgelogik();
     Context context = getContext();
+    Bundle values = new Bundle();
+
 
 
 
@@ -135,15 +137,13 @@ public class StartSpilFragment extends Fragment implements View.OnClickListener{
         m = (Button) rod.findViewById(R.id.m_BTN);
         m.setOnClickListener(this);
 
-
-
-
-
-        return rod;
+       return rod;
     }
 
     @Override
     public void onClick(View view) {
+
+        SharedPreferences SP =  getActivity().getPreferences(context.MODE_PRIVATE);
 
         switch(view.getId()) {
             case R.id.q_BTN:
@@ -517,7 +517,6 @@ public class StartSpilFragment extends Fragment implements View.OnClickListener{
         if (galgelogik.getLossStatus()) {
 
             FinishgameFrag fragment = new FinishgameFrag();
-            Bundle values = new Bundle();
             values.putBoolean("tab", galgelogik.getLossStatus());
             values.putString("ord", galgelogik.getChosenWord());
             fragment.setArguments(values);
@@ -528,22 +527,18 @@ public class StartSpilFragment extends Fragment implements View.OnClickListener{
                     .commit();
         }
 
-        System.out.println(galgelogik.getChosenWord());
-
         if (galgelogik.getWinStatus()) {
 
             FinishgameFrag fragment = new FinishgameFrag();
-            Bundle values = new Bundle();
             values.putBoolean("vind", galgelogik.getWinStatus());
+            values.putInt("gæt", galgelogik.getNrOfWrongLetters());
             values.putString("ord", galgelogik.getChosenWord());
             fragment.setArguments(values);
 
-            SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
 
             SP.edit().putString("ord", galgelogik.getChosenWord()).apply();
             SP.edit().putInt("score", galgelogik.getNrOfWrongLetters()).apply();
-
-            System.out.println(SP.getInt("score", 0) + SP.getString("ord", " tom"));
 
             getFragmentManager().beginTransaction()
                     .replace(R.id.fragment_FL, fragment)

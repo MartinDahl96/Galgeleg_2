@@ -22,7 +22,7 @@ public class Galgelogik {
      * win afgør om spilleren har vundet
      * lose afgør om spillere har tabt
      */
-    private ArrayList<String> wordSample = new ArrayList<String>();
+    public ArrayList<String> wordSample = new ArrayList<String>();
     private String chosenWord;
     private ArrayList<String> usedLetters = new ArrayList<String>();
     private String visibleWord;
@@ -201,6 +201,17 @@ public class Galgelogik {
         if (lose) System.out.println("- De har tabt spillet");
         if (win) System.out.println("- De har vundet");
         System.out.println("----------");
+    }
+
+    public int getWordPosition(String ord) {
+        if (wordSample.contains(ord)) {
+            for(int i = 0; i <= wordSample.size(); i++) {
+                if (wordSample.get(i) == ord) {
+                    return i;
+                }
+            }
+        }
+        return 0;
     }
 
 }

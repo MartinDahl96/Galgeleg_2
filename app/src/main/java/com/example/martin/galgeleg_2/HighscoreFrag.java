@@ -4,16 +4,15 @@ package com.example.martin.galgeleg_2;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.AdapterView;
+
+import java.util.ArrayList;
 
 
 /**
@@ -23,7 +22,10 @@ public class HighscoreFrag extends Fragment {
 
     TextView titel_TV;
     ListView Highscore_LV;
-
+    Context context = getContext();
+    Galgelogik galgelogik = new Galgelogik();
+    ArrayList<String> ord = galgelogik.getWordSample();
+    ArrayList<Integer> scores = new ArrayList<Integer>();
 
     public HighscoreFrag() {
         // Required empty public constructor
@@ -36,12 +38,20 @@ public class HighscoreFrag extends Fragment {
 
         View rod = inflater.inflate(R.layout.fragment_highscore, container, false);
 
-        SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        final SharedPreferences SP =  getActivity().getPreferences(context.MODE_PRIVATE);
 
-        final String [] test = {SP.getString("ord", "tom"), "Test 2", "Test 3", "Test 4", "Test 5", "Test 6", "Test 7"};
-        final String[] subtest = {"1", "2", "3", "4", "5", "6", "7"};
+        if (savedInstanceState == null) {
+            for (int i = 0; i <= ord.size(); i++) {
+                scores.add(0);
+            }
+        }
 
-        //ArrayAdapter adapter = new ArrayAdapter(this.getActivity(), android.R.layout.simple_list_item_2, android.R.id.text1, test);
+        for (int j = 0; j <= scores.size(); j++) {
+            if (scores.get(j) == 0) {
+                scores.set(j, 0);
+            }
+        }
+
 
        titel_TV = (TextView) rod.findViewById(R.id.titel_TV);
        titel_TV.setText("HIGHSCORE: ");
@@ -51,7 +61,7 @@ public class HighscoreFrag extends Fragment {
         BaseAdapter adapter = new BaseAdapter() {
             @Override
             public int getCount() {
-                return test.length;
+                return galgelogik.wordSample.size();
             }
 
             @Override
@@ -67,17 +77,19 @@ public class HighscoreFrag extends Fragment {
             @Override
             public View getView(int i, View view, ViewGroup viewGroup) {
                 if (view == null) view = getLayoutInflater().inflate(R.layout.listlayout, null);
+
                 TextView ordet = (TextView) view.findViewById(R.id.ordet_TV);
-                ordet.setText(test[i]);
+                ordet.setText(ord.get(i));
 
                 TextView forsøg = (TextView) view.findViewById(R.id.forsøg_TV);
-                forsøg.setText(subtest[i]);
+                if (ord.get(i) == SP.getString("ord", "intet") && scores.get(i) == 0) {
+                    scores.set(galgelogik.getWordPosition(SP.getString("ord","intet")), SP.getInt("score", 0));
+                }
 
+                forsøg.setText(String.valueOf(scores.get(i)));
                 return view;
             }
         };
-
-
 
         Highscore_LV.setAdapter(adapter);
 

@@ -43,6 +43,7 @@ public class HovedmenuFrag extends Fragment implements View.OnClickListener {
         highscore_BTN.setText("Highscore");
         highscore_BTN.setOnClickListener(this);
 
+
         return rod;
     }
 
