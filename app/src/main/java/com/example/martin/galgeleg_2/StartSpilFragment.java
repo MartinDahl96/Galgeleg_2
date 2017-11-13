@@ -1,7 +1,10 @@
 package com.example.martin.galgeleg_2;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +23,7 @@ public class StartSpilFragment extends Fragment implements View.OnClickListener{
     ImageView galge;
     Button q, w, e, r, t, y, u, i, o, p, å, a, s, d, f, g, h, j, k, l, æ, ø, z, x, c, v, b, n, m;
     Galgelogik galgelogik = new Galgelogik();
+    Context context = getContext();
 
 
 
@@ -524,6 +528,8 @@ public class StartSpilFragment extends Fragment implements View.OnClickListener{
                     .commit();
         }
 
+        System.out.println(galgelogik.getChosenWord());
+
         if (galgelogik.getWinStatus()) {
 
             FinishgameFrag fragment = new FinishgameFrag();
@@ -531,6 +537,13 @@ public class StartSpilFragment extends Fragment implements View.OnClickListener{
             values.putBoolean("vind", galgelogik.getWinStatus());
             values.putString("ord", galgelogik.getChosenWord());
             fragment.setArguments(values);
+
+            SharedPreferences SP = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
+            SP.edit().putString("ord", galgelogik.getChosenWord()).apply();
+            SP.edit().putInt("score", galgelogik.getNrOfWrongLetters()).apply();
+
+            System.out.println(SP.getInt("score", 0) + SP.getString("ord", " tom"));
 
             getFragmentManager().beginTransaction()
                     .replace(R.id.fragment_FL, fragment)
