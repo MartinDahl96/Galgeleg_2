@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class HovedmenuFrag extends Fragment implements View.OnClickListener {
 
     TextView velkomst_TV;
-    Button startSpil_BTN, hjaelp_BTN;
+    Button startSpil_BTN, hjaelp_BTN, highscore_BTN;
 
     public HovedmenuFrag() {
         // Required empty public constructor
@@ -39,6 +39,10 @@ public class HovedmenuFrag extends Fragment implements View.OnClickListener {
         hjaelp_BTN.setText("Hjælp");
         hjaelp_BTN.setOnClickListener(this);
 
+        highscore_BTN = (Button) rod.findViewById(R.id.highscore_BTN);
+        highscore_BTN.setText("Highscore");
+        highscore_BTN.setOnClickListener(this);
+
         return rod;
     }
 
@@ -59,5 +63,14 @@ public class HovedmenuFrag extends Fragment implements View.OnClickListener {
                     .addToBackStack(null)
                     .commit();
         }
+
+        if (v == highscore_BTN) {
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_FL, new HighscoreFrag())
+                    .addToBackStack(null)
+                    .commit();
+        }
+
+
     }
 }

@@ -3,8 +3,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="hjaelp">Sådan spiller du spillet:\n
-        Gæt på ét bogstav af gangen for at tjekke om det er i ordet. Hvis det gættede bogstav findes i ordet har du gættet rigtigt.
+    <string name="hjaelp">Sådan spiller du spillet:\nGæt på ét bogstav af gangen for at tjekke om det er i ordet. Hvis det gættede bogstav findes i ordet har du gættet rigtigt.
         Hvis det ikke er i ordet, har du gættet forkert og der vil blive tegnet en kropsdel på manden i galgen.
-        Når manden har fået tegnet alle sine kropdele vil spillet været tabt. Kan du nå at gætte ordet inden han dør?</string>
+        Når manden har fået tegnet alle sine kropsdele vil manden dø, og spillet er tabt. Kan du nå at gætte ordet inden han dør?</string>
 </resources>

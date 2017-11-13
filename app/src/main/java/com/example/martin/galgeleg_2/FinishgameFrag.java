@@ -52,7 +52,7 @@ public class FinishgameFrag extends Fragment implements View.OnClickListener {
         }
 
         if (vind) {
-            status.setText("Tillykke! Du gættede ordet og reddede manden!");
+            status.setText("Tillykke! Du gættede ordet: " + ord + " og reddede manden!");
             besked.setText("Der er flere ord at gætte endnu, kan du gætte dem alle?"
                     + "\nVil du spille igen?");
             statusPic.setImageResource(R.drawable.win);

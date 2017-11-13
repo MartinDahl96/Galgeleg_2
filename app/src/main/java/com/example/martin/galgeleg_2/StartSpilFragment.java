@@ -529,6 +529,7 @@ public class StartSpilFragment extends Fragment implements View.OnClickListener{
             FinishgameFrag fragment = new FinishgameFrag();
             Bundle values = new Bundle();
             values.putBoolean("vind", galgelogik.getWinStatus());
+            values.putString("ord", galgelogik.getChosenWord());
             fragment.setArguments(values);
 
             getFragmentManager().beginTransaction()
