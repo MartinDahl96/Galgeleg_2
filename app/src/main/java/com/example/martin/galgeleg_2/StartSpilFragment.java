@@ -1,17 +1,18 @@
 package com.example.martin.galgeleg_2;
 
 
-import android.content.Context;
-import android.content.SharedPreferences;
+
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 /**
@@ -23,7 +24,6 @@ public class StartSpilFragment extends Fragment implements View.OnClickListener{
     ImageView galge;
     Button q, w, e, r, t, y, u, i, o, p, å, a, s, d, f, g, h, j, k, l, æ, ø, z, x, c, v, b, n, m;
     Galgelogik galgelogik = new Galgelogik();
-    Context context = getContext();
     Bundle values = new Bundle();
 
 
@@ -137,13 +137,47 @@ public class StartSpilFragment extends Fragment implements View.OnClickListener{
         m = (Button) rod.findViewById(R.id.m_BTN);
         m.setOnClickListener(this);
 
+
+            new AsyncTask() {
+
+                boolean connected = false;
+
+                @Override
+                protected Object doInBackground(Object... arg0) {
+
+                    try {
+                        galgelogik.getWordsFromDR();
+                        connected = true;
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    return Log.d("AsyncTask", "doInBackground complete!");
+                }
+
+                @Override
+                protected void onPostExecute(Object result) {
+
+                    if (connected) {
+                        Toast.makeText(getActivity(), "Ord hentet fra DR.dk", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(getActivity(), "Der blev ikke indlæst ord fra DR.dk", Toast.LENGTH_LONG).show();
+                    }
+
+
+                    skjultOrd.setText(galgelogik.getVisibleWord());
+                }
+
+
+            }.execute();
+
        return rod;
     }
 
     @Override
     public void onClick(View view) {
 
-        SharedPreferences SP =  getActivity().getPreferences(context.MODE_PRIVATE);
 
         switch(view.getId()) {
             case R.id.q_BTN:
@@ -534,11 +568,6 @@ public class StartSpilFragment extends Fragment implements View.OnClickListener{
             values.putInt("gæt", galgelogik.getNrOfWrongLetters());
             values.putString("ord", galgelogik.getChosenWord());
             fragment.setArguments(values);
-
-
-
-            SP.edit().putString("ord", galgelogik.getChosenWord()).apply();
-            SP.edit().putInt("score", galgelogik.getNrOfWrongLetters()).apply();
 
             getFragmentManager().beginTransaction()
                     .replace(R.id.fragment_FL, fragment)

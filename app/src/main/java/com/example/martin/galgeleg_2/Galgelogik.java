@@ -2,7 +2,13 @@ package com.example.martin.galgeleg_2;
 
 import android.content.Intent;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Random;
 
 /**
@@ -212,6 +218,38 @@ public class Galgelogik {
             }
         }
         return 0;
+    }
+
+    public static String getURL(String url) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(new URL(url).openStream()));
+        StringBuilder sb = new StringBuilder();
+        String linje = br.readLine();
+        while (linje != null) {
+            sb.append(linje + "\n");
+            linje = br.readLine();
+        }
+        return sb.toString();
+    }
+
+    public void getWordsFromDR() throws Exception {
+        String words = getURL("https://dr.dk");
+
+        words = words.substring(words.indexOf("<body"))
+                .replaceAll("<.?>", " ").toLowerCase()
+                .replaceAll("&#198;", "æ")
+                .replaceAll("&#230;","æ")
+                .replaceAll("&#216;", "ø")
+                .replaceAll("&#248;", "ø")
+                .replaceAll("&oslash;", "ø")
+                .replaceAll("&#229;", "å")
+                .replaceAll("[^a-zæøå]", " ")
+                .replaceAll(" [a-zæøå] "," ")
+                .replaceAll(" [a-zæøå][a-zæøå] "," ");
+
+        wordSample.clear();
+        wordSample.addAll(new HashSet<String>(Arrays.asList(words.split(" "))));
+
+        reset();
     }
 
 }
